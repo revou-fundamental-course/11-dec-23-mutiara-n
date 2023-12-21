@@ -5,6 +5,23 @@
 
 // replaceName()   
 
+let section=document.querySelectorAll('section')
+let navLink=document.querySelectorAll('header ul a')
+window.onscroll=()=>{
+    section.forEach(sec=>{
+        let top=window.scrollY;
+        let offset=sec.offsetTop-150;
+        let height=sec.offsetHeight;
+        let id=sec.getAttribute('id')
+        if(top>offset && top<offset + height){
+            navLink.forEach(links=>{
+                links.classList.remove('active')
+                document.querySelector('header ul a[href*='+id+']').classList.add('active')
+            })
+        }
+    })
+}
+
 let currentIndex = 0
 const images = document.querySelectorAll(".slider-img")
 const totalImages = images.length
@@ -36,6 +53,6 @@ function validateForm() {
 function setSenderUI(name, birthDate, gender, messages) {
     document.getElementById("sender-full-name").innerHTML = name;
     document.getElementById("sender-birth-date").innerHTML = birthDate;
-    document.getElementById("sender-gender").innerHTML = birthDate;
+    document.getElementById("sender-gender").innerHTML = gender;
     document.getElementById("sender-messages").innerHTML = messages;
 }
