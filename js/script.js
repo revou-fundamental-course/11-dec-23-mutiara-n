@@ -3,27 +3,7 @@
 //     document.getElementById("yourname").innerHTML = yourname;
 // }
 
-// replaceName()
-
-// var slideIndex = 1;
-// showDivs(slideIndex);
-
-// function plusDivs(n){
-//     showDivs ((slideIndex == n));
-// }
-
-// function showDivs(n) {
-//     var i;
-//     var imgList = document.getElementsByClassName("img-slideshow");
-//     if (n > imgList.length) slideIndex = 1;
-//     else if (n < 1) slideIndex = imgList.length;
-
-//     for (i = 0; i < imgList.length; i++) {
-//         imgList[i].style.display = "none";
-//     }
-
-//     imgList[slideIndex - 1].style.display = "block";
-// }    
+// replaceName()   
 
 let currentIndex = 0
 const images = document.querySelectorAll(".slider-img")
@@ -36,13 +16,6 @@ function changeImage(){
 }
 
 setInterval (changeImage, 2000)
-
-function setSenderUI(name, birthDate, gender, messages) {
-    document.getElementById("sender-full-name").innerHTML = name;
-    document.getElementById("sender-birth-date").innerHTML = birthDate;
-    document.getElementById("sender-gender").innerHTML = birthDate;
-    document.getElementById("sender-messages").innerHTML = messages;
-}
 
 function validateForm() {
     const name = document.forms["message-form"]["full-name"].value;
@@ -58,4 +31,11 @@ function validateForm() {
     setSenderUI(name, birthDate, gender, messages);
 
     return false;
+}
+
+function setSenderUI(name, birthDate, gender, messages) {
+    document.getElementById("sender-full-name").innerHTML = name;
+    document.getElementById("sender-birth-date").innerHTML = birthDate;
+    document.getElementById("sender-gender").innerHTML = birthDate;
+    document.getElementById("sender-messages").innerHTML = messages;
 }
