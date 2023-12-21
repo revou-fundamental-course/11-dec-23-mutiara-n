@@ -1,9 +1,9 @@
-// function replaceName() {
-//     let yourname = prompt("What's your name?", "");
-//     document.getElementById("yourname").innerHTML = yourname;
-// }
+function replaceName() {
+    let yourname = prompt("What's your name?", "");
+    document.getElementById("yourname").innerHTML = yourname;
+}
 
-// replaceName()   
+replaceName()   
 
 let section=document.querySelectorAll('section')
 let navLink=document.querySelectorAll('header ul a')

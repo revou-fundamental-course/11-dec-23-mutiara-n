@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jujutsu High</title>
+    <link rel="icon" type="image/x-icon" href="assets/logo.webp">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="header-wrapper">
         <img src="assets/logo.webp" alt="Logo" class="logo">
-        <ul class="nav-items">
-            <li>Home</li>
-            <a href="#profile" class="active"><li>Our Profile</li></a>
-            <li>Achievement</li>
-            <li>Message Us</li>
-        </ul>
+        <div class="menu">
+            <button>Home</button>
+            <a class="button-profile" href="#profile" class="active" style="text-decoration: none;">Our Profile</a>
+            <button>Achievement</button>
+            <button>Message Us</button>
+        </div>
     </header>
 
     <main class="main-content">
@@ -26,109 +27,136 @@
             </div>
         <hr>
         
-    <h1>Our Facilities</h1>
-    <div class="facilitations">
-        <div>
-            <div class="circle" style="background-image: url('assets/classroom.webp');"></div>
-            <h4>Classroom</h4>
+        <h1>Our Facilities</h1>
+        <div class="facilitations">
+            <div>
+                <div class="circle" style="background-image: url('assets/classroom.jpg');"></div>
+                <h4>Classroom</h4>
+            </div>
+            <div>
+                <div class="circle" style="background-image: url('assets/cinema.webp');"></div>
+                <h4>Cinema</h4>
+            </div>
+            <div>
+                <div class="circle" style="background-image: url('assets/dormitory.webp');"></div>
+                <h4>Dormitory</h4>
+            </div>
+            <div>
+                <div class="circle" style="background-image: url('assets/foothills.webp');"></div>
+                <h4>Foothills</h4>
+            </div>
         </div>
-        <div>
-            <div class="circle" style="background-image: url('assets/profile1.jpeg');"></div>
-            <h4>Library</h4>
-        </div>
-        <div>
-            <div class="circle" style="background-image: url('assets/profile3.jpeg');"></div>
-            <h4>Laboratory</h4>
-        </div>
-    </div>
-    <hr>
+        <hr>
 
-    <h1>Message Us</h1>
-    <div class="content">
-        <div class="data-form">
-        <form name="message-form" onsubmit="return validateForm()">
-            <div class="row">
-                <div class="col-25">
-                <label for="fullname">Nama :</label>
+        <h1>Message Us</h1>
+        <div class="content">
+            <div class="data-form">
+            <form name="message-form" onsubmit="return validateForm()">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fullname">Nama :</label>
+                    </div>
+                    <div class="col-75">
+                        <input placeholder="Nama" type="text" name="full-name"/>
+                    </div>
                 </div>
-                <div class="col-75">
-                    <input placeholder="Nama" type="text" name="full-name"/>
-                </div>
-                <br/>
-            </div>
 
-            <div class = "row">
-                <div class="col-25">
-                    <label for="birthdate">Tanggal Lahir :</label>
+                <div class = "row">
+                    <div class="col-25">
+                        <label for="birthdate">Tanggal Lahir :</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" name="birth-date"/>
+                    </div>
                 </div>
-                <div class="col-75">
-                    <input type="date" name="birth-date"/>
+            
+                <div class = "row">
+                    <div class="col-25">
+                        <label for="gender">Jenis Kelamin :</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="radio" id="male" name="gender" value="male"/>
+                        <label for="male">Laki-laki</label>
+                        <input type="radio" id="female" name="gender" value="female"/>
+                        <label for="female">Perempuan</label>
+                    </div>
                 </div>
-                <br/>
-            </div>
-        
-            <div class = "row">
-                <div class="col-25">
-                    <label for="gender">Jenis Kelamin :</label>
-                </div>
-                <div class="col-75">
-                <input type="radio" id="male" name="gender" value="male"/>
-                <label for="male">Laki-laki</label>
-                <input type="radio" id="female" name="gender" value="female"/>
-                <label for="female">Perempuan</label>
-                <br/>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-25">
-                    <label for="messages">Pesan :</label>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="messages">Pesan :</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea placeholder="Pesan" name="messages"></textarea>
+                    </div>
                 </div>
-                <div class="col-75">
-                    <textarea placeholder="Pesan" name="messages"></textarea>
-                </div>
-            </div>
 
-            <div class="row">
-                <input type="submit" value="Submit" />
-            </div>
+                <div class="row">
+                    <input type="submit" value="Submit" />
+                </div>
             </form>
             </div>
 
-        <div class="message-form">
-            <div class="data-result">
-            <p>Nama : <span id="sender-full-name"></span></p>
+            <div class="message-form">
+                <div class="data-result">
+                <p>Nama : <span id="sender-full-name"></span></p>
 
-            <p>Tanggal Lahir : <span id="sender-birth-date"></span></p>
+                <p>Tanggal Lahir : <span id="sender-birth-date"></span></p>
 
-            <p>Jenis Kelamin : <span id="sender-gender"></span></p>
+                <p>Jenis Kelamin : <span id="sender-gender"></span></p>
 
-            <p>Pesan : <span id="sender-messages"></span></p>
+                <p>Pesan : <span id="sender-messages"></span></p>
+                </div>
             </div>
         </div>
-    </div>
-    <hr/>
+        <hr/>
 
-    <section class="Profile" id="profile">
-        <h1 class="all-heading"><span>Our Profile</span></h1>
-    </section>
-        <div class="profile">
-            <h3>About School</h3>
-            <p>Tokyo Jujutsu High serves not only as a training ground for the next generation of sorcerers but 
-                a headquarters for all alumni who have graduated on to be full-fledged jujutsu sorcerers as well. 
-                All sorcerers play a role in mentoring jujutsu students, whether in a teacher's role or accompanying 
-                them on missions. Weaker sorcerers are assigned the roles of windows, someone who can see curses but 
-                is not considered a full-fledged sorcerer or managers to contribute as well. The jujutsu schools are 
-                considered the place for the community and provide mediation, general support, education, and shelter.
-                </p>
-            <h3>Visi dan Misi</h3>
-            <p>1. Rela Bekerja dan Menolong Sesama</p>
-        </div>
+        <section class="Profile" id="profile">
+            <h1 class="all-heading"><span>Our Profile</span></h1>
+        </section>
+            <div class="profile">
+                <div class="about">
+                    <h3>About School</h3>
+                    <p>Sekolah Tinggi Jujutsu Tokyo tidak hanya berfungsi sebagai tempat pelatihan bagi generasi penyihir 
+                        berikutnya tetapi juga markas bagi semua alumni yang telah lulus menjadi ahli sihir jujutsu sepenuhnya. 
+                        Semua dukun berperan dalam membimbing siswa jujutsu, baik sebagai guru atau menemani mereka dalam misi. 
+                        Penyihir yang lebih lemah diberi peran sebagai jendela, seseorang yang dapat melihat kutukan tetapi tidak
+                        dianggap sebagai penyihir atau manajer yang mampu berkontribusi juga. Sekolah jujutsu dianggap sebagai 
+                        tempat komunitas dan memberikan mediasi, dukungan umum, pendidikan, dan perlindungan.</p>
+                </div>
+                <div class="curriculum">
+                    <h3>Curriculum</h3>
+                    <p>Kurikulum sekolah diajarkan selama empat tahun. Penyihir muda akan diajarkan untuk mengontrol kutukan
+                        mereka dan menggunakannya untuk mengusir roh jahat dari kutukan lain. Setiap kelas akan diajarkan oleh
+                        penyihir Jujutsu profesional yang masih aktif. Para guru akan mengatur pelatihan murid-muridnya sesuai
+                        penilaian yang cocok bagi murid tersebut. Dikarenakan penyihir Jujutsu sangat jarang, setiap kelas 
+                        terdiri dari individu yang sedikit sehingga setiap murid dapat difokuskan untuk membangun penyihir 
+                        yang kompeten secepat mungkin.</p>
+                </div>
+                <h3>Visi dan Misi</h3>
+                <div class="visimisi">
+                    <div class="visi">
+                        <h4>Visi</h4>
+                        <p>"Terwujudnya sekolah yang unggul dalam kutukan, sihir, dan bahasa serta berwawasan tinggi di dunia sihir 
+                            berlandaskan kekuatan dan kutukan"</p>
+                    </div>
+                    <div>
+                        <h4>Misi</h4>
+                        <ul class="misi">
+                            <li>Mengkondisikan sekolah yang gemar membaca, serta dapat berbahasa Jepang dan bahasa Kuno dengan baik dan benar.</li>
+                            <li>Menumbuhkan kepribadian penyihir yang kritis, kreatif, inovatif, mandiri, dan bertanggung jawab.</li>
+                            <li>Mengkondisikan para penyihir untuk peduli terhadap lingkungan</li>
+                            <li>Membimbing para penyihir untuk dapat melanjutkan ke Perguruan Tinggi Jujutsu Tokyo</li>
+                            <li>Melatih para penyihir untuk dapat menjadi pengajar professional</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         <hr/>
     </main>
 
     <footer>
-        <p>RevoU 2023</p>
+        <p>Created By Mutiara</p>
     </footer>
     <script src="js/script.js"></script>
 </body>
